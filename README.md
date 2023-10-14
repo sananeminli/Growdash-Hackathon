@@ -1,0 +1,2 @@
+# Growdash-Hackathon
+Team Dinamo
