@@ -59,7 +59,7 @@ def get_brand(brand_id):
 @app.get("/branch/{branch_id}")
 def get_branch(branch_id):
     result = {
-        "branch_name": "Dubai Mall",
+        "branch_name": f"Nusret {branch_id}",
         "branch_id": branch_id,
         "polarity_score": 72,
         "subjectivity_score": 24,
