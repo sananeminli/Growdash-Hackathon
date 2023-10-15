@@ -6,7 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 
-APP_FRONTEND_ORIGINS = env.get("APP_FRONTEND_ORIGINS", "http://localhost:3000,http://localhost:5173")
+APP_FRONTEND_ORIGINS = env.get("APP_FRONTEND_ORIGINS", "http://157.230.114.105:5173,http://localhost:5173")
 
 app = FastAPI(
     middleware=[
