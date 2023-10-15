@@ -2,3 +2,4 @@ aiofiles
 fastapi
 pytest
 uvicorn
+textblob
