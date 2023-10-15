@@ -9,6 +9,8 @@ from fastapi.responses import JSONResponse
 APP_FRONTEND_ORIGINS = env.get("APP_FRONTEND_ORIGINS", "http://157.230.114.105:5173,http://localhost:5173")
 
 app = FastAPI(
+    title="Dinamo",
+    description="Compec x Growdash Hackathon - Dinamo Team backend api",
     middleware=[
         Middleware(CORSMiddleware, allow_origins=APP_FRONTEND_ORIGINS.split(","), allow_credentials=True, allow_methods=["*"], allow_headers=["*"]),
     ],
