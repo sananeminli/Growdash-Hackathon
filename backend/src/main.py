@@ -28,14 +28,12 @@ async def health():
 @app.get("/brand/{brand_id}")
 def get_brand(brand_id):
     result = {
-        "brand_id": brand_id,
-        "brand_status": "OK",
-        "brand_result": "SUCCESS",
-    }
-    result = {
         "brand_name": "Nusret",
         "polarity_score": 57,
         "subjectivity_score": 34,
+        "rating_actual": 4.2,
+        "rating_rounded": 4.0,
+        "rating_count": 1729,
         "ratings": [
             {
                 "platform_name": "Talabat",
@@ -48,7 +46,7 @@ def get_brand(brand_id):
                 "rating_rounded": 4.5,
             },
         ],
-        "branch_id": [123, 456, 789],
+        "branch_ids": [123, 456, 789],
     }
     return JSONResponse(result)
 
@@ -83,8 +81,8 @@ def get_branch_detail(branch_id):
             },
             {
                 "platform_name": "Deliveroo",
-                "rating_actual": 4.4,
-                "rating_rounded": 4.5,
+                "rating_actual": 3.4,
+                "rating_rounded": 3.5,
             },
         ],
         "meals": [
