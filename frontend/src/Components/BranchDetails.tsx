@@ -89,7 +89,7 @@ const BranchDetails: React.FC = () => {
                 </div>
               ))}
             </Col>
-            
+
           </Row>
         </Card>
       </div>
@@ -102,10 +102,10 @@ const BranchDetails: React.FC = () => {
                   <h3>{meal.meal_name}</h3>
                 </Col>
                 <Col span={8}>
-                    
+
                     <h3>{meal.rating_actual}</h3>
-                  
-                  
+
+
                 </Col>
                 <Col span={8}>
                 <Rate

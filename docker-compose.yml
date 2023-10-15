@@ -12,14 +12,14 @@ services:
     env_file:
       - ./backend/.env
     command: uvicorn src:app --host 0.0.0.0 --reload
-  # frontend:
-  #   build:
-  #     context: ./frontend
-  #     dockerfile: Dockerfile
-  #   container_name: growdash-frontend
-  #   hostname: frontend
-  #   image: growdash-frontend
-  #   ports:
-  #     - "${GROWDASH_FRONTEND_PORT:-3000}:${GROWDASH_FRONTEND_PORT:-3000}"
-  #   env_file:
-  #     - ./frontend/.env
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: growdash-frontend
+    hostname: frontend
+    image: growdash-frontend
+    ports:
+      - "${GROWDASH_FRONTEND_PORT:-5173}:${GROWDASH_FRONTEND_PORT:-5173}"
+    env_file:
+      - ./frontend/.env

@@ -23,7 +23,7 @@ const Home: React.FC = () => {
         branch_ids:number[]
       }
 
-      
+
     const [brand, setBrand] = useState<HomePageData>();
     const apiUrl = `http://157.230.114.105:8000/brand/1`;
 
@@ -45,7 +45,7 @@ const Home: React.FC = () => {
     // Call the fetchData function inside the useEffect callback
     fetchData();
   }, []);
-      
+
   return (
     <>
       <div >
@@ -71,7 +71,7 @@ const Home: React.FC = () => {
 
               <h3>Positivity Score</h3>
 
-              
+
             </Col>
             <Col span={6}>
             {brand?.ratings.map((rating, index) => (
@@ -85,7 +85,7 @@ const Home: React.FC = () => {
                     disabled={true}
                   />
                 </div>))}
-                
+
               </Col>
             <Col span={6}>
               <h3>Subjectivity Score</h3>
@@ -101,7 +101,7 @@ const Home: React.FC = () => {
         </Card>
       </div>
       <div>
-       
+
       {brand?.branch_ids.map((ids, index) => (
                 <div key={index}>
                   <BranchCard branch_id={ids}/>

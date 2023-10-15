@@ -3,7 +3,7 @@
 set -euxo pipefail
 
 touch ./backend/.env
-# touch ./frontend/.env
+touch ./frontend/.env
 touch ./.env
 
 docker compose down -v --remove-orphans

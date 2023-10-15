@@ -44,7 +44,7 @@ const BranchCard: React.FC<BranchProps> = ({ branch_id }) => {
     <div  onClick={() => {
       window.location.href = `/branchdetails/${branch_id}`;
     }}
-    
+
     style={{margin:"10px"}}>
     <Card
       hoverable={true}
