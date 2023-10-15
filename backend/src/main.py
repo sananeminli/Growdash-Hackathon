@@ -5,6 +5,8 @@ from fastapi.middleware import Middleware
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
+from .data import DashboardData
+
 
 APP_FRONTEND_ORIGINS = env.get("APP_FRONTEND_ORIGINS", "http://157.230.114.105:5173,http://localhost:5173")
 
@@ -50,6 +52,7 @@ def get_brand(brand_id):
         ],
         "branch_ids": [123, 456, 789],
     }
+    result = DashboardData.get_brand(brand_id)
     return JSONResponse(result)
 
 
@@ -64,6 +67,7 @@ def get_branch(branch_id):
         "rating_rounded": 4.0,
         "rating_count": 1256,
     }
+    result = DashboardData.get_branch(branch_id)
     return JSONResponse(result)
 
 
