@@ -102,16 +102,14 @@ def get_branch_detail(branch_id):
 
 @app.get("/branch/{branch_id}/chart")
 def get_branch_chart(branch_id):
-    result = {
-        "chart_rating": [
-            {"date": "Date:2023-10-09T17:48:35Z", "rating": 4.1},
-            {"date": "Date:2023-10-10T17:48:35Z", "rating": 4.4},
-            {"date": "Date:2023-10-11T17:48:35Z", "rating": 4.9},
-            {"date": "Date:2023-10-12T17:48:35Z", "rating": 4.8},
-            {"date": "Date:2023-10-13T17:48:35Z", "rating": 4.0},
-            {"date": "Date:2023-10-14T17:48:35Z", "rating": 3.1},
-            {"date": "Date:2023-10-15T17:48:35Z", "rating": 3.5},
-            {"date": "Date:2023-10-16T17:48:35Z", "rating": 4.1},
-        ],
-    }
+    result = [
+        {"date": "Date:2023-10-09T17:48:35Z", "rating": 4.1},
+        {"date": "Date:2023-10-10T17:48:35Z", "rating": 4.4},
+        {"date": "Date:2023-10-11T17:48:35Z", "rating": 4.9},
+        {"date": "Date:2023-10-12T17:48:35Z", "rating": 4.8},
+        {"date": "Date:2023-10-13T17:48:35Z", "rating": 4.0},
+        {"date": "Date:2023-10-14T17:48:35Z", "rating": 3.1},
+        {"date": "Date:2023-10-15T17:48:35Z", "rating": 3.5},
+        {"date": "Date:2023-10-16T17:48:35Z", "rating": 4.1},
+    ]
     return JSONResponse(result)
