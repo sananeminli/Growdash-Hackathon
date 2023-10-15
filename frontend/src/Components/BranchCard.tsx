@@ -21,7 +21,8 @@ interface BranchProps {
 
 const BranchCard: React.FC<BranchProps> = ({ branch_id }) => {
   const [branch, setBranch] = useState<BranchData>();
-  const apiUrl = `http://157.230.114.105:8000/branch/` + {branch_id};
+  const apiUrl = `http://157.230.114.105:8000/branch/${branch_id}`
+  console.log(branch_id)
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -44,7 +45,7 @@ const BranchCard: React.FC<BranchProps> = ({ branch_id }) => {
     <div  onClick={() => {
       window.location.href = `/branchdetails/${branch_id}`;
     }}
-
+    
     style={{margin:"10px"}}>
     <Card
       hoverable={true}
@@ -76,8 +77,10 @@ const BranchCard: React.FC<BranchProps> = ({ branch_id }) => {
           <Progress
             percent={branch?.subjectivity_score}
             status="active"
+            showInfo = {false}
             strokeColor={{ from: "#108ee9", to: "#87d068" }}
           />
+           <h4>Objective             Subjective                 </h4>
         </Col>
       </Row>
     </Card>
