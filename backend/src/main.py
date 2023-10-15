@@ -52,7 +52,7 @@ def get_brand(brand_id):
         ],
         "branch_ids": [123, 456, 789],
     }
-    result = DashboardData.get_brand(brand_id)
+    # result = DashboardData.get_brand(brand_id)
     return JSONResponse(result)
 
 
@@ -67,7 +67,7 @@ def get_branch(branch_id):
         "rating_rounded": 4.0,
         "rating_count": 1256,
     }
-    result = DashboardData.get_branch(branch_id)
+    # result = DashboardData.get_branch(branch_id)
     return JSONResponse(result)
 
 
