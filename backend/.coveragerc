@@ -1,0 +1,9 @@
+[run]
+omit =
+    src/__init__.py
+    src/middlewares/*
+
+[report]
+exclude_lines =
+    pragma: no cover
+    if TYPE_CHECKING:

@@ -1,0 +1,5 @@
+ignored:
+  - DL3013
+override:
+  style:
+    - DL3042
