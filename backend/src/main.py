@@ -6,6 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from .data import DashboardData
+from .sentiment import Sentiment
 
 
 APP_FRONTEND_ORIGINS = env.get("APP_FRONTEND_ORIGINS", "http://157.230.114.105:5173,http://localhost:5173")
@@ -129,3 +130,8 @@ def get_branch_chart(branch_id):
         {"date": "2023-10-16T17:48:35Z", "rating": 4.1},
     ]
     return JSONResponse(result)
+
+
+@app.post("/sentiment")
+def analyze_input_text(input_text: str):
+    return JSONResponse(Sentiment.analyze(input_text))
