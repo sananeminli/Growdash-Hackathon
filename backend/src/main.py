@@ -54,9 +54,13 @@ def get_brand(brand_id):
 @app.get("/branch/{branch_id}")
 def get_branch(branch_id):
     result = {
+        "branch_name": "Dubai Mall",
         "branch_id": branch_id,
-        "branch_status": "OK",
-        "branch_result": "SUCCESS",
+        "polarity_score": 72,
+        "subjectivity_score": 24,
+        "rating_actual": 3.7,
+        "rating_rounded": 4.0,
+        "rating_count": 1256,
     }
     return JSONResponse(result)
 
