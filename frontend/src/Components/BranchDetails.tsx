@@ -11,10 +11,10 @@ const BranchDetails: React.FC = () => {
   const [chartData, setChartData] = useState<any[]>();
   const [finalChart, setFinalChart] = useState<ChartDataItem[]>();
 
-  
+
 
   const apiUrl = `http://157.230.114.105:8000/branch/1/detail`;
- 
+
   const chartUrl = `http://157.230.114.105:8000/branch/1/chart`;
   const [branchdetails, setBranchDetails] = useState<BranchDetailsData | null>(null);
 
@@ -50,10 +50,10 @@ const BranchDetails: React.FC = () => {
     rating: rating,
   }));
 
-  
 
- 
-  
+
+
+
 
   interface BranchDetailsData {
     branch_name: string;
@@ -73,10 +73,10 @@ const BranchDetails: React.FC = () => {
     ratings_chart:number[]
   }
 
-  
 
 
-  
+
+
 
   return (
     <>
