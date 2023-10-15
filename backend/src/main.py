@@ -13,6 +13,7 @@ APP_FRONTEND_ORIGINS = env.get("APP_FRONTEND_ORIGINS", "http://157.230.114.105:5
 
 app = FastAPI(
     title="Dinamo",
+    version="0.2.3",
     description="Compec x Growdash Hackathon - Dinamo Team backend api",
     middleware=[
         Middleware(CORSMiddleware, allow_origins=APP_FRONTEND_ORIGINS.split(","), allow_credentials=True, allow_methods=["*"], allow_headers=["*"]),
@@ -30,7 +31,7 @@ async def health():
     return {"status": "healthy"}
 
 
-@app.get("/brand/{brand_id}")
+@app.get("/brand/{brand_id}", tags=["brand"])
 def get_brand(brand_id):
     result = {
         "brand_name": "Nusret",
@@ -57,7 +58,7 @@ def get_brand(brand_id):
     return JSONResponse(result)
 
 
-@app.get("/branch/{branch_id}")
+@app.get("/branch/{branch_id}", tags=["branch"])
 def get_branch(branch_id):
     result = {
         "branch_name": f"Nusret {branch_id}",
@@ -72,7 +73,7 @@ def get_branch(branch_id):
     return JSONResponse(result)
 
 
-@app.get("/branch/{branch_id}/detail")
+@app.get("/branch/{branch_id}/detail", tags=["branch"])
 def get_branch_detail(branch_id):
     result = {
         "branch_name": "Dubai Mall",
@@ -117,7 +118,7 @@ def get_branch_detail(branch_id):
     return JSONResponse(result)
 
 
-@app.get("/branch/{branch_id}/chart")
+@app.get("/branch/{branch_id}/chart", tags=["branch"])
 def get_branch_chart(branch_id):
     result = [
         {"date": "2023-10-09T17:48:35Z", "rating": 4.1},
@@ -132,6 +133,6 @@ def get_branch_chart(branch_id):
     return JSONResponse(result)
 
 
-@app.post("/sentiment")
+@app.post("/sentiment", tags=["sentiment"])
 def analyze_input_text(input_text: str):
     return JSONResponse(Sentiment.analyze(input_text))
